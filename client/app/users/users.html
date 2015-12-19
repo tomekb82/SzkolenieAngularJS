@@ -1,0 +1,37 @@
+<div class="well top-margin">
+    <h4>{{ 'user' | translate }}</h4>
+    <form class="form-inline" novalidate name="usersCtrl.userForm">
+        <div class="form-group">
+            <input name="first-name" type="text" class="form-control"
+                   required ng-minlength="2" ng-pattern="/^[a-zA-Z]+$/"
+                   placeholder="Podaj imię" ng-model="usersCtrl.currentUser.firstName">
+            <div ng-messages="usersCtrl.userForm['first-name'].$error" ng-messages-multiple>
+                <div ng-messages-include="common/errors.html"/>
+            </div>
+        </div>
+        <div class="form-group">
+            <input name="last-name" type="text" class="form-control"
+                   placeholder="Podaj nazwisko" ng-model="usersCtrl.currentUser.lastName">
+        </div>
+        <div class="form-group">
+            <input name="email" type="email" class="form-control"
+                   placeholder="Podaj adres email" ng-model="usersCtrl.currentUser.email">
+        </div>
+        <button type="button" class="btn btn-default" ng-click="usersCtrl.save()"
+                ng-disabled="usersCtrl.userForm.$invalid">Zapisz</button>
+    </form>
+</div>
+
+<div class="panel panel-default" ng-repeat="user in usersCtrl.users"
+        ng-click="usersCtrl.setCurrentUser(user)" hover>
+    <div class="panel-heading">
+        <a class="pull-right" ng-click="usersCtrl.delete($event, user)">
+            <span class="glyphicon glyphicon-remove"></span>
+        </a>
+        {{ user.firstName }} {{ user.lastName }}
+    </div>
+    <div class="panel-body">
+        <p><strong>Id:</strong> {{ user._id}}</p>
+        <p><strong>Adres email:</strong> {{ user.email}}</p>
+    </div>
+</div>

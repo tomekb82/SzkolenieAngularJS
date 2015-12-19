@@ -1,0 +1,21 @@
+{
+  "name": "Client",
+  "description": "Client",
+  "version": "0.0.0",
+  "private": true,
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-route": "~1.4.5",
+    "angular-loader": "~1.4.5",
+    "angular-mocks": "~1.4.5",
+    "html5-boilerplate": "~5.2.0",
+    "bootstrap": "~3.3.5",
+    "angular-flot": "~0.0.14",
+    "angular-messages": "~1.4.7",
+    "angular-translate": "~2.8.1",
+    "angular-translate-loader-static-files": "~2.8.1",
+    "angular-translate-storage-local": "~2.8.1",
+    "angular-cookies": "~1.4.7",
+    "angular-animate": "~1.4.7"
+  }
+}
